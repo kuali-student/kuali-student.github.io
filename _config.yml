@@ -1,0 +1,12 @@
+# Site settings
+title: Kuali Student on Github
+email: ks.collab@kuali.org
+description: > # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog/
+#url: "http://yourdomain.com" # the base hostname & protocol for your site
+#github_username:  kuali-student
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
