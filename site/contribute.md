@@ -17,7 +17,7 @@ Instead Git Flavour Markdown files can be created in subdirectories from the pro
 
 Follow the [installations instructions](http://jekyllrb.com).
 
-
+Follow the instructions to align with the versions of ruby and jekyll that github is using: [https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll](https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll)
 
 # File Pull Requests to make documentation changes
 
@@ -33,7 +33,9 @@ $ git clone https://github.com/kuali-student/kuali-student.github.io
 
 $ cd kuali-student.github.io
 
-$ jekyll serve
+$ bundle install
+
+$ bundle exec jekyll serve
 
 {% endhighlight %}
 
