@@ -54,6 +54,19 @@ $ git branch | grep " contrib_CM" | grep -v "@" | xargs git push cmc
 
 The conversion process tracked when branches were deleted and suffixed the revision where the delete took place to the name of the branch.  The **grep -v "@"** part excludes any branches that represent deletes as they are not needed.
 
+When the number of branches is large you might need to manually specify a lower max limit:
+```
+$ git branch | grep " contrib_CM" | grep -v "@" | xargs git -n 15 push cmc
+```
+
+Or resort to loading them one by one:
+
+```
+$ git branch | grep " contrib_CM" | grep -v "@" | while read B; do git push cmc $B; done
+```
+
+Because of the delay in doing it this way this should be a local or in memory operation and then pushed into github after all of the branches have been migrated.
+
 #### Example of push output
 ![](images/push-contrib-cm.png)
 

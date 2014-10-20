@@ -47,7 +47,8 @@ Due to limitations of GitHub file sizes we’ve moved the database files to http
 # Examples
 
 1. [Extract a new Repository from archived-from-svn](examples/extract-new-repo.html)
-1. [Configure and Run the fusion-maven-plugin on top level aggregate branches](examples/configure-fusion-maven-plugin.html)
+2. [Extract and fuse a single build tag from archived-from-svn](examples/extract-and-fuse-a-build-tag.html)
+3. [Configure and Run the fusion-maven-plugin on top level aggregate branches](examples/configure-fusion-maven-plugin.html)
 
 ### How to Contribute more Documentation
 
