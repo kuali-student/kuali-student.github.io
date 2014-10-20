@@ -2,21 +2,46 @@
 layout: default
 ---
 
-# Repositories
+# The Kuali Student Project
 
-## [archived-from-svn](https://github.com/kuali-student/archived-from-svn)
+Kuali Student Website
+See: http://www.kuali.org/ks
 
-The kuali-student subversion repository contained 77740 revisions between April 2008 and October 2014.
+The [kuali-student github organization](https://github.com/kuali-student) is an effort to maintain the commit history of Kuali Student after development from Kuali.org has stopped.  
 
-The [git-repository-tools](https://github.com/kuali-student/git-repository-tools) project was used to perform the conversion of the entire repository into a single git repository.  
+At this time (October 2014) there are no plans to maintain the project from the Kuali Foundation, the KualiCo organization, or from any other parties.  
 
-Most of the other repositories contain a portion of the commit graph contained here.
+As there have been no decisions regarding timelines, scope, and intent with regards to supporting this codebase from KualiCo and the Kuali Foundation, we are creating this codebase as a means for other communities to support the codebase by making it publicly available.  
 
-### Key Alterations
+If a community forms that wishes to maintain this codebase administration of this github organization and repositories will be transferred to the new community.
 
-1. To reduce the repository size all .MPX files were modified to remove their content.
-2. Two large files were removed to reduce the repository size and pass the github requirement of no files being > 100 MB in size.
-3. Commits changed in steps 1 and 2 were rewritted with updated *fusion-maven-plugin.dat* values to allow the fusion-maven-plugin to continue to work.
+## Repositories
+
+See: [Repositories](repositories.html) for a detailed breakdown of the *kuali-student* organization repositories.
+
+## Committing Code
+At this time, pull requests will remain unpushed until a community forms to govern the review, acceptance, and release policies.
+
+How does this repository relate to svn.kuali.org?
+
+This project is a fork of the Kuali Student SVN repo as of the nightly build tag 917 which occurred on October 12th 2014.  
+
+This tag was considered a milestone release (details below).
+
+## State of Applications at the time of forking
+
+This code base originated from https://svn.kuali.org/repos/student/enrollment/trunk.  
+
+Application All commit history has been preserved of Curriculum Management 3.0 (ks-lum Milestone 1 of Founder’s Release 1) 
+and Enrollment 1.0 (ks-enroll Milestone 2 of Founder’s Release 2).  
+
+Academic Planning is in a stable but functionally incomplete state (see https:\\wiki.kuali.org for more details).
+
+## Building and Running
+
+Steps to build and run the code can be found here: https://wiki.kuali.org/display/STUDENTDOC/3.+Build+the+Database+and+Code
+
+Due to limitations of GitHub file sizes we’ve moved the database files to https://github.com/kuali-student/ks-development-impex so for step 3.2 you’ll need to clone that repo for loading data.  
 
 
 # Examples
