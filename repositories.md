@@ -10,6 +10,7 @@ Most of the other repositories are different sets of branches from this base, al
 
 Below are more detailed descriptions of the contents of the different repositories.
 
+## 
 
 ## [ks-development](https://github.com/kuali-student/ks-development)
 
@@ -38,6 +39,13 @@ The idea is that development work will be conducted on this fused branch in an i
 The **master** branch is the fused *contrib_CM_aggregate_trunk* branch which was based on the fused *enrollment_aggregate_branches_CM-2.0* branch.
 
 After the CM 2.0 release this repository was used to hold institutional contributions back in a way more easily mergable into the mainline branch.
+
+## [pull-request-processing](https://github.com/kuali-student/pull-request-processing)
+
+The **master branch contains the maven projects and shell scripts for running CI on pull requests before they are merged into the fused development trunk.
+
+The provided scripts don't completely work as they were part of a proof-of-concept that was not completed before work on KS was halted in October 2014.
+
 
 ## [git-repository-tools](https://github.com/kuali-student/git-repository-tools)
 

@@ -4,6 +4,39 @@ layout: default
 
 # Impex Process
 
+## CM 2.x Impex Process
+
+In the CM 2.x branches the old impex process was used and in that process the xml files ended in .xml and these were not purged from the repository
+
+## Fused Impex Process
+
+First make sure that you are using a [fused branch](extract-and-fuse-a-build-tag.html). Then follow these steps from the [Student Developer Guide](https://wiki.kuali.org/display/STUDENTDOC/3.2.2+Manual+Process):
+
+
+1. checked the fused branch 
+2. mvn clean install -Pimpex-only,sql-only
+3. cd ks-deployments/ks-dbs/ks-impex
+4. mvn initialize -Psource-db,local -N
+5. mvn generate-resources -Pdump,local -N
+6. mvn process-resources -Pimpexscm -N
+7. cd ../../..
+8. mvn clean install -Pimpex-only,sql-only
+9. git add ks-deployments/ks-db/ks-impex/*/src/main/resources
+10. git commit -m "Commiting impex changes"
+
+**Step 4** creates the bootstrapping database from the -sql artifacts.
+
+**Step 5** dumps out the .mpx files for each table in the db created in step 4.
+
+**Step 6** moves the .mpx files back into the source code of the ks-impex-app-db and ks-impex-rice-db artifacts.
+
+**Step 8** rebuilds the impex artifacts so that loading the data using the updated files becomes possible.
+
+In subversion step 6 had an option to automatically commit the changed .mpx files.  
+
+That is now accomplished in steps 9 and 10.
+
+## Split Impex Process
 In the CM 2.x release the wiki steps for the legacy impex process can be followed.
 
 In the master branch of the ks-development and ks-development-impex repositories the following process should be used.
