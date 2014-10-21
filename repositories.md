@@ -10,11 +10,22 @@ Most of the other repositories are different sets of branches from this base, al
 
 Below are more detailed descriptions of the contents of the different repositories.
 
-## 
+## [kuali-student.github.io](https://github.com/kuali-student/kuali-student.github.io)
+
+The **master** branch on this repository holds the *jekyll* based site that is deployed at [kuali-student.github.io](https://kuali-student.github.io).
+
+## [ks-final-milestone](https://github.com/kuali-student/ks-final-milestone) 
+
+This is a fusion of the final build-917 which was declared the CM FR1 M1 and ENR FR2 M2 with the manual impex process
+run and the resultant .mpx files committed.
+
+This is a way to get the final version without everyone having to run the manual impex process.
+
+**It is not recommended to continue development on this repository.**
 
 ## [ks-development](https://github.com/kuali-student/ks-development)
 
-Holds **master** branch for continued KS develpoment.  Git doesn't work as well when you have thousands of branches so this repository holds the master branch seperate from the history of the project (this branch was extracted from the ks repository).  
+Holds the **master** branch for continued KS develpoment.  Git doesn't work as well when you have thousands of branches so this repository holds the master branch seperate from the history of the project (this branch was extracted from the ks repository).  
 
 ### Note Regarding Impex
 
