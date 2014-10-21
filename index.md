@@ -31,6 +31,7 @@ This project is a fork of the Kuali Student SVN repository at revision 77740.
 
 [enrollment_aggregate_tags_builds_2.1_2.1.1-FR2-M1_build-917](https://github.com/kuali-student/archived-from-svn/tree/enrollment_aggregate_tags_builds_student-2.1_2.1.1-FR2-M1_build-917)
  which occurred on October 12th 2014 is considered the milestone for:
+
 1. Curriculium Management 3.0 (ks-lum 3.0 Milestone 1 of Founder's Release 1)
 2. Enrolmment 1.0 (ks-enroll Milestone 2 or Founder's Release 2)
 
