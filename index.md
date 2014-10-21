@@ -36,6 +36,9 @@ This project is a fork of the Kuali Student SVN repository at revision 77740.
 2. Enrolmment 1.0 (ks-enroll Milestone 2 or Founder's Release 2)
 
 It also contains a stable but functionally incomplete Academic Planning Module.  See [https://wiki.kuali.org](https://wiki.kuali.org) for more details.
+
+A fused version of build-917 with the manual impex process reapplied is available from the [ks-final-milestone](https://github.com/kuali-student/ks-final-milestone) repository.  
+
   
 ## Building and Running
 
