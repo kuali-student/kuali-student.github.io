@@ -51,6 +51,7 @@ Continued development of kuali student in Git should use the **ks-development-im
 1. [Extract a new Repository from archived-from-svn](examples/extract-new-repo.html)
 2. [Extract and fuse a single build tag from archived-from-svn](examples/extract-and-fuse-a-build-tag.html)
 3. [Configure and Run the fusion-maven-plugin on top level aggregate branches](examples/configure-fusion-maven-plugin.html)
+4. [Run the Manual Impex Process](examples/impex.html)
 
 ### How to Contribute more Documentation
 
