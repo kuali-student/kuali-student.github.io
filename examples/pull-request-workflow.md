@@ -36,5 +36,6 @@ Scripts were developed that invoked the <b>git-workflow-maven-plugin</b> and the
 Acting upon the results of these checks was never implemented but in most cases if there is sign-off then the change should be automatically merged into the __master__ branch.  In a post successful build action.
 
 
+The incomplete scripts are located here: [pull-request-processing](https://github.com/kuali-student/pull-request-processing)
 
 
