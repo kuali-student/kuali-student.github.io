@@ -9,8 +9,6 @@ See: [http://www.kuali.org/ks](http://www.kuali.org/ks)
 
 The [kuali-student github organization](https://github.com/kuali-student) is an effort to maintain the commit history of Kuali Student after development from Kuali.org has stopped.  
 
-At this time (October 2014) there are no plans to maintain the project from the Kuali Foundation, the KualiCo organization, or from any other parties.  
-
 As there have been no decisions regarding timelines, scope, and intent with regards to supporting this codebase from KualiCo and the Kuali Foundation, we are creating this codebase as a means for other communities to support the codebase by making it publicly available.  
 
 If a community forms that wishes to maintain this codebase administration of this github organization and repositories will be transferred to the new community.
