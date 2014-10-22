@@ -50,6 +50,15 @@ Several Mojo's exist but most were experimental.
 
 ### Add fusion-maven-plugin definition to the ```<plugins>``` section
 
+The fuse mojo takes the branch and puts that tree into a directory of the same name of the __module__ in
+the aggregate branch.
+
+In order to be able to fuse and split the mappings need to be setup in the pom.xml file.
+
+If you only intend to fuse but never split you can just fuse using the fusion-maven-plugin.dat file contents.
+
+Although that file is only guaranteed accurate for build tags.  For trunks and feature branches it can be out of date (it is only updated when there is a commit on the aggregate branch, so doesn't capture changes made only to a module branch).
+
 
 {% highlight xml %}
     <plugins>
@@ -59,40 +68,14 @@ Several Mojo's exist but most were experimental.
 	    <version>${fusion-maven-plugin.version}</version>
             <configuration>
                 <mappings>
+		    <!-- Add a mapping for each directory and source branch -->
                     <mapping>
                         <module>ks-api</module>
 			<branchName>
-				contrib_CM_ks-api_branches_org-service
+				contrib_CM_ks-api_branches_org-service  <!-- change this to the actual name of the source branch. -->
 			</branchName>
                         <versionProperty>
 				ks.api.version
-			</versionProperty>
-                    </mapping>
-                    <mapping>
-                        <module>ks-core</module>
-			<branchName>
-				contrib_CM_ks-core_branches_org-service
-			</branchName>
-                        <versionProperty>
-				ks.core.version
-			</versionProperty>
-                    </mapping>
-                    <mapping>
-                        <module>ks-lum</module>
-			<branchName>
-				contrib_CM_ks-lum_branches_org-service
-			</branchName>
-                        <versionProperty>
-				ks.lum.version
-			</versionProperty>
-                    </mapping>
-                    <mapping>
-                        <module>ks-deployments</module>
-			<branchName>
-				contrib_CM_ks-deployments_branches_org-service
-			</branchName>
-                        <versionProperty>
-				ks.deployments.version
 			</versionProperty>
                     </mapping>
                 </mappings>
@@ -122,14 +105,3 @@ Several Mojo's exist but most were experimental.
     </plugins>
 {% endhighlight %}
 
-## FuseMojo
-
-The fuse mojo uses JGit combined with the git-repository-tools-common artifact to create the fused merge commit.
-
-The *<mappings>* section in the pom.xml is used to specify the name of the directory to materialize within the aggregate and also the source branch to use.
-
-The fusion-maven-plugin.dat file if it exists tries to provide the exact git commit id's to use (i.e. what those branches specified in the svn:externals pointed at the last time there was a commit into the aggregate).
-
-## Split Mojo
-
-## Tag Mojo
