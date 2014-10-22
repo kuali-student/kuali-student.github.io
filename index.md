@@ -23,7 +23,7 @@ The repositories are typically additive where fetching references from more than
 
 ## Committing Code
 
-At this time, pull requests will remain unpushed until a community forms to govern the review, acceptance, and release policies.
+At this time, [pull requests](examples/pull-request-workflow.html) will remain unpushed until a community forms to govern the review, acceptance, and release policies.
 
 How does this repository relate to svn.kuali.org?
 
@@ -56,6 +56,7 @@ Continued development of kuali student in Git should use the **ks-development-im
 3. [Configure and Run the fusion-maven-plugin on top level aggregate branches](examples/configure-fusion-maven-plugin.html)
 4. [Run the Manual Impex Process](examples/impex.html)
 5. [Build the Latest Code using the two repositories](examples/build-dual-repos.html)
+6. [Pull Request Workflow](examples/pull-request-workflow.html)
 
 ### How to Contribute more Documentation
 
