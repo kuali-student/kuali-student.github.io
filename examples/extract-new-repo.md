@@ -14,6 +14,94 @@ For the most part you can just take a few key branches and any history that they
 
 This page describes the mechanics of extracting a subset of the archived-from-svn repository.
 
+# Example: Extract KS Trunk and CM 2.0 Branches from archived-from-svn
+
+In order to support the continued development of kuali student the existing development branches for trunk and CM 2.0 were extracted.
+
+We create an empty git repository and then fetch specificially named branches.  Typically the next step would be to apply the fusion-maven-plugin configuration to the aggregate branch and then perform the fusion operations.
+
+Then once things were fused the fused branches could be uploaded into a new git repository.
+
+## Initialize a local non-bare git repository
+
+```
+$ git init ks-dev
+```
+
+## Add a remote to the archived-from-svn repository
+
+```
+$ git remote add origin 
+```
+
+The reason we use the remote name of origin is that the __fusion-maven-plugin's__ fuse mojo looks for local branches and branches in the origin remote namespace.
+
+In the future this remote name could be made configurable but for now just use 'origin' as the name of the remote.
+
+## Edit the .git/config file to add in the specific branches we are interested in
+
+Find the __remote__ section for _origin_:
+
+### Default remote configuration to fetch all branches
+
+{% highlight shell %}
+
+[remote "origin"]
+    url = https://github.com/kuali-student/archived-from-svn.git
+
+    fetch = +refs/heads/*:refs/remotes/origin/*
+    
+{% endhighlight %}
+
+This will look for all of the refs in the origin repository heads directory and then download those into the refs/remotes/origin directory in the local repository.
+
+But it will do it for all of the branches which we don't want in this case.
+
+### Specifically Select the branches to fetch
+
+{% highlight shell %}
+
+[remote "origin"]
+	url = https://github.com/kuali-student/archived-from-svn.git
+
+	fetch = refs/heads/enrollment_aggregate_trunk:refs/remotes/origin/enrollment_aggregate_trunk
+   	fetch = refs/heads/enrollment_ks-enroll_trunk:refs/remotes/origin/enrollment_ks-enroll_trunk
+	fetch = refs/heads/enrollment_ks-fa_trunk:refs/remotes/origin/enrollment_ks-fa_trunk
+	fetch = refs/heads/enrollment_ks-ap_trunk:refs/remotes/origin/enrollment_ks-ap_trunk
+	fetch = refs/heads/enrollment_ks-lum_trunk:refs/remotes/origin/enrollment_ks-lum_trunk
+	fetch = refs/heads/enrollment_ks-core_trunk:refs/remotes/origin/enrollment_ks-core_trunk
+	fetch = refs/heads/enrollment_ks-api_branches_2.0.0-Mx:refs/remotes/origin/enrollment_ks-api_branches_2.0.0-Mx
+	fetch = refs/heads/enrollment_ks-deployments_trunk:refs/remotes/origin/enrollment_ks-deployments_trunk
+	
+	fetch = refs/heads/enrollment_aggregate_branches_CM-2.0:refs/remotes/origin/enrollment_aggregate_branches_CM-2.0
+	fetch = refs/heads/enrollment_ks-lum_branches_CM-2.0:refs/remotes/origin/enrollment_ks-lum_branches_CM-2.0
+	fetch = refs/heads/enrollment_ks-core_branches_CM-2.0:refs/remotes/origin/enrollment_ks-core_branches_CM-2.0
+	fetch = refs/heads/enrollment_ks-api_branches_CM-2.0:refs/remotes/origin/enrollment_ks-api_branches_CM-2.0
+	fetch = refs/heads/enrollment_ks-deployments_branches_CM-2.0:refs/remotes/origin/enrollment_ks-deployments_branches_CM-2.0
+
+
+	fetch = refs/heads/enrollment_aggregate_branches_services:refs/remotes/origin/enrollment_aggregate_branches_services
+	fetch = refs/heads/enrollment_ks-api_trunk:refs/remotes/origin/enrollment_ks-api_trunk
+
+{% endhighlight %}
+
+
+## Fetch the specificially named branches
+
+```
+$ git fetch origin
+```
+
+## Create local branches
+
+At this point you can fuse and or select which branches you want.
+
+And then push into the target repository.
+
+```
+$ git push target <specific local branch>
+```
+
 # Example: Extract CM Contribution Branches from archived-from-svn
 
 The CM Contribution branches were a special aggregate created on top of one of the CM releases.
